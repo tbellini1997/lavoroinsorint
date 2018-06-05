@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Register page</title>
+</head>
+<body>
+
+  <h1>Register page</h1>
+<br><br><br>
+<form action="{% url 'register' %}" method="post">
+  {% csrf_token %}
+    {{ form.as_p }}<br>
+
+    <br><input type="submit" value="Sign UP">
+    <br><br>
+    {% if messages %}
+       {% for message in messages %}
+           {{ message }}
+       {% endfor %}
+    {% endif %}
+
+</form>
+</body>
+</html>

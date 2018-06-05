@@ -1,0 +1,34 @@
+{% load static %}
+
+<html>
+<head>
+  <title>Booking page</title>
+  <link rel="stylesheet" type="text/css" href="{% static '/register.css' %}" />
+</head>
+<body>
+<div>
+
+<span><h1 style="background: yellow;">Book your car!<br> Welcome: {{ utente }}
+  {% if utente is None %}
+  <span><a href="{% url 'login' %}">Login</a></span>
+  {% else %}
+  <span><a href="{% url 'logout' %}">Logout</a></span>
+  {% endif %}
+</h1></span>
+
+</div>
+<div style="height: 300px; border: 5px;">
+<h2>Lista tue prenotazioni</h2>
+
+</div>
+
+<div style="height: 450px; border: 5px;">
+<h2>Lista veicoli disponibili</h2>
+    {% for car in cars %}
+    {% if car.booked is False %}
+    <h3><a href="{% url 'details' id=car.id %}">{{ car.model }}</a></h3>
+    {% endif %}
+    {% endfor %}
+</div>
+</body>
+</html>

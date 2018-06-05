@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Login page</title>
+</head>
+<body>
+
+  <h1>Login page</h1>
+<br><br><br>
+<form action="{% url 'login' %}" method="post">
+  {% csrf_token %}
+    {{ form.as_p }}<br>
+    <h4><a href="{% url 'register' %}">Haven't already got an account? Go to registration page!</a></h4>
+    <br><input type="submit" value="Login">
+    <br><br>
+    {% if messages %}
+       {% for message in messages %}
+           {{ message }}
+       {% endfor %}
+    {% endif %}
+
+</form>
+</body>
+</html>

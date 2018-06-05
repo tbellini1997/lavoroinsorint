@@ -1,0 +1,60 @@
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+
+h2{
+  text-color: purple;
+
+}
+div{
+  background: black;
+
+
+}
+font{
+  color: white;
+}
+hr.style18 {
+  height: 30px;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+hr.style18:before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+.container{
+  width: 200px;
+  height: 200px;
+  background: black;
+
+  margin: 0 auto;
+
+}
+hr.style-five {
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px black;
+}
+.flex-container{
+display: -webkit-flex;
+display: -moz-flex;
+display: flex;
+-webkit-justify-content: space-between;
+-moz-justify-content: space-between;
+justify-content: space-between;
+width: 800px;
+height: 200px;
+background-color:lightgrey;
+margin:30px auto;
+}
+.wrapper{
+  border-radius:25px;
+}

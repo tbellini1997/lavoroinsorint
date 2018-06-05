@@ -1,0 +1,93 @@
+{% load static %}
+
+<html>
+<head>
+  <title>Details car page</title>
+  <link rel="stylesheet" type="text/css" href="{% static '/register.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static '/details.css' %}" />
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div>
+  <span class="group-btn">
+    <input type="button" class="btn btn-success" onclick="location.href='{% url 'index' %}';" value="Back to Homepage"/></span>
+
+  </span>
+
+</div>
+
+
+
+<div style="height: 300px; border: 5px; width: 35%; float:left;">
+<h2><b><font>Veicolo</font></b></h2>
+<font>
+{% for car in cars %}
+<h3>Modello: {{ car.model }}</h3>
+<h3>Targa: {{ car.licenseplate }}</h3>
+<h3>Porte: {{ car.doors }}</h3>
+<h3>Posti: {{ car.seats }}</h3>
+</font>
+</div><br>
+<div style="height: 830px; float: right; width: 63.5%; border: 5px;">
+  <h2><b><font>Prenota veicolo </font> </b></h2>
+  <div class="container" style="width: 50%;">
+	<div class="row" style="width: 50%;">
+    <div class="col-md-4">
+		<div class="form_main">
+                <div class="form">
+                  <form action="{% url 'details' id=car.id %}" method="post">
+                    {% csrf_token %}
+                    <b>  {{ form.as_p }} <b>
+<<<<<<< HEAD
+                      <br><input class="btn btn-warning" type="submit" value="Prenota">
+
+
+
+
+                  </form>
+
+=======
+                      <br><input class="btn btn-warning" type="submit" value="Prenota"
+		</form>
+>>>>>>> 2a6d1081cbda13ade28fe632210193865d964ee2
+            </div>
+            </div>
+
+          </div>
+
+
+</div>
+<<<<<<< HEAD
+{% if messages %}
+   {% for message in messages %}
+      <li class="alert alert-danger">{{ message }}</li>
+
+   {% endfor %}
+=======
+ {% if messages %}
+{% for message in messages %}
+    {{ message }}
+{% endfor %}
+>>>>>>> 2a6d1081cbda13ade28fe632210193865d964ee2
+{% endif %}
+</div>
+
+</div>
+{% endfor %}
+<div style="height: 555px; float: left; width: 35%; border: 5px;"><br><br>
+  <hr class="style18"><hr class="style18">
+
+  <h2><b><font>Lista prenotazioni veicolo</font></b></h2>
+
+<font>  {% for carbooked in carsbooked %}
+    <h3>{{ carbooked.username.get }} da {{ carbooked.frombooked }} a {{ carbooked.tobooked }}</h3>
+  {% endfor %}
+</font>
+
+</div>
+
+
+</body>
+</html>
